@@ -1,0 +1,13 @@
+.page-footer {
+    padding-top: 0;
+}
+.footer-copyright .row {
+    margin-bottom: 0;
+}
+footer a {
+    margin: 0 10px;
+}
+
+.credits, .copyrights {
+    padding-top: 5px;
+}

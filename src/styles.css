@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+
+.card-panel {
+  margin: 0;
+}
+
+a {
+  color: #000;
+}
+
+.btn {
+  background-color: #ee6e73;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #ef8b8f;
+}
+
+/* Social Media Icons */
+
+.facebook {
+  background-color: #3b5998;
+  color: #fff !important;
+}
+
+.facebook i {
+  color: #fff !important;
+}
+
+.facebook:hover, .facebook:focus {
+  background-color: #4c70ba !important;
+}
+
+.github {
+  background-color: #444444;
+  color: #fff !important;
+}
+
+.github i {
+  color: #fff !important;
+}
+
+.github:hover, .github:focus {
+  background-color: #5e5e5e !important;
+}
+
+.linkedin {
+  background-color: #007bb6;
+  color: #fff !important;
+}
+
+.linkedin i {
+  color: #fff !important;
+}
+
+.linkedin:hover, .linkedin:focus {
+  background-color: #009de9 !important;
+}
+
+.twitter {
+  background-color: #55acee;
+  color: #fff !important;
+}
+
+.twitter i {
+  color: #fff !important;
+}
+
+.twitter:hover, .twitter:focus {
+  background-color: #83c3f3 !important;
+}
