@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     let totalHeight = windowHeight - 64 - 56;
     document.getElementById("home-page").setAttribute('style', 'min-height: ' + totalHeight + 'px');
   }
-
+  //function called when the user wants to generate shortened url
   shortenUrl() {
     let url = this.urlForm.value.url;
     this.urlShortenService.shortenUrl(url)

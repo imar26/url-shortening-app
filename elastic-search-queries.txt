@@ -1,0 +1,19 @@
+GET /urlindex/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /urlindex/_search?q=id:QSXFlK
+
+GET /urlindex/_search
+{
+  "query": {
+      "match_phrase" : {
+          "longUrl" : "https://"
+      }
+  }
+}
+
+DELETE /urlindex
