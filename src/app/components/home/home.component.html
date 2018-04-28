@@ -2,21 +2,31 @@
   <div class="container">
     <div class="row">
       <div class="center-align">
-        <a class="btn-floating btn-large icons"><i class="material-icons">link</i></a>
+        <a class="btn-floating btn-large icons cyan lighten-1"><i class="material-icons">link</i></a>
       </div>
       <h3 class="center-align">URL Shortner</h3>
-      <form class="col s12">
+      <form class="col s12" method="post" (ngSubmit)="shortenUrl(url)" #f="ngForm">
         <div class="row">
           <div class="input-field">
-            <input id="url_inline" type="url" class="validate">
+            <input id="url_inline" type="text" required pattern="https?://.+" ngModel name="url" #url="ngModel">
             <label for="url_inline">URL</label>
-            <span class="helper-text" data-error="wrong" data-success="right">Validation Result</span>
+            <div *ngIf="url.errors && (url.dirty || url.touched)">
+              <div [hidden]="!url.errors.required">
+                URL is required!
+              </div>
+              <div [hidden]="!url.errors.pattern">
+                URL is not valid
+              </div>
+            </div>            
           </div>
-          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <button [disabled]="!f.valid" class="btn waves-effect waves-light cyan lighten-1" type="submit" name="action">Shorten
             <i class="material-icons right">send</i>
-          </button>
+          </button>          
         </div>
       </form>
+      <div class="left">
+        <p>Shortened Link: <a href={{shortUrl}} target="_blank">{{shortUrl}}</a></p>
+      </div>
     </div>
   </div>
 </div>

@@ -2,5 +2,11 @@
     padding: 50px 0;
 }
 .icons {
-    background-color: #ee6e73;
+    background-color: #26c6da;
+}
+.input-field p {
+    margin: 0;
+}
+p a {
+    color: #26c6da;
 }
