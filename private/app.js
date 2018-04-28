@@ -7,16 +7,47 @@ module.exports = function(app, client) {
     
     app.post("/api/shortenUrl", function (req, res) {
         var long = req.body.url;
-        var short = "";
         var uid = new ShortUniqueId();
         uid = uid.randomUUID(6);
-        client.set(uid, long, function(err, output) {
+        client.keys("*", function(err, listKeys) {
             if(err) {
                 res.status(404).json(err);
-            } else {
-                res.status(200).json(uid);
+            } else {            
+                if(listKeys.length > 0) {
+                    let j = 0;
+                    for(let i=0; i<listKeys.length; i++) {                        
+                        client.get(listKeys[i], function(err, output) {
+                            if(err) {
+                                res.status(404).json(err);
+                            } else {
+                                if(output === long) {
+                                    res.status(200).json(listKeys[i]);
+                                } else {
+                                    j++;
+                                    if(j === listKeys.length) {
+                                        client.set(uid, long, function(err, output) {
+                                            if(err) {
+                                                res.status(404).json(err);
+                                            } else {
+                                                res.status(200).json(uid);
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        });                      
+                    }
+                } else {
+                    client.set(uid, long, function(err, output) {
+                        if(err) {
+                            res.status(404).json(err);
+                        } else {
+                            res.status(200).json(uid);
+                        }
+                    });
+                }
             }
-        });
+        });        
     });
     
     app.get("/:shortCode", function (req, res) {
