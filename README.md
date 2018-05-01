@@ -57,6 +57,8 @@ npm start
 * REST API
 * Elasticsearch
 * Kibana
+* HTML5
+* Materialize CSS
 
 ### Production
 
