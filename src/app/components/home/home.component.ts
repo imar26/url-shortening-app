@@ -10,7 +10,7 @@ import { URLShortenService } from '../../services/url-shorten.service.client';
 export class HomeComponent implements OnInit {
   @ViewChild('f') urlForm: NgForm;
   //properties
-  shortUrl: string;
+  shortUrl: any;
   constructor(private urlShortenService: URLShortenService) { }
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     let url = this.urlForm.value.url;
     this.urlShortenService.shortenUrl(url)
       .subscribe((shortenUrl) => {
-        this.shortUrl = "http://localhost:3000/" + shortenUrl;
+        this.shortUrl = shortenUrl;
       }, (err) => {
         console.log(err);
       });
