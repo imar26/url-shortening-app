@@ -49,7 +49,13 @@ module.exports = function(app, client) {
                                 // if value of the key is same as the value of the long url
                                 if(output === long) {
                                     // return the key to the user
-                                    res.status(200).json(listKeys[i]);
+                                    let url = "";
+                                    if(req.headers.host === "my-url-shorten.herokuapp.com") {
+                                        url = req.headers.origin + '/' + listKeys[i];
+                                    } else {
+                                        url = 'http://localhost:3000/' + listKeys[i];
+                                    }
+                                    res.status(200).json(url);
                                 } else {
                                     j++;
                                     // if no keys have the value that match with the value of the long url, 
