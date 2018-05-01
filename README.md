@@ -1,27 +1,63 @@
-# UrlShortenApp
+# T-Kithub 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This is an URL-Shortening APP which takes the entire URL as the input and converts that input into a 6 digit short unique uid and returns back to the user with a short link. The user clicks on this new link, which in turn redirects the user to the original url passed as an input by the user.
 
-## Development server
+## Steps to Setup and Run the Application
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Installation and Running
+1. You need to have **angular cli**, **node.js**, **npm**, **redis**, **elasticsearch** and **kibana** installed on your machine. Once installed, you can check the versions using the below commands
 
-## Code scaffolding
+```sh
+node -v
+npm -v
+```
+Links for reference:
+* [install node.js](https://nodejs.org/en/download/)
+* [install angular-cli](https://github.com/angular/angular-cli)
+* [install redis](https://www.npmjs.com/package/redis)
+* [install elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/windows.html)
+* [install kibana](https://www.elastic.co/guide/en/kibana/current/windows.html)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Clone the project from GitHub Repository and Install all the necessary packages
+```sh
+git clone https://github.com/imar26/url-shortening-app.git
+cd url-shortening-app
+npm install
+```
+3. Start node.js server
+```sh
+node index.js
+```
 
-## Build
+4. Start angular server
+```
+npm start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+5. Start Elasticsearch and Kibana console
+    1. In one shell run
+        ```
+        cd {{path to elastic-search}}
+        .\bin\elasticsearch.bat
+        ```
+    2. In another shell run
+        ```
+        cd {{path to kibana}}
+        .\bin\kibana.bat
+        ```
 
-## Running unit tests
+6. Open your browser and go to [http://localhost:4200/](http://localhost:4200/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Technologies Used
 
-## Running end-to-end tests
+* Node.js
+* Angular 4
+* Redis
+* Express JS
+* REST API
+* Elasticsearch
+* Kibana
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Production
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Application deployed on: https://my-url-shorten.herokuapp.com/
