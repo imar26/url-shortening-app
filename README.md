@@ -1,4 +1,4 @@
-# T-Kithub 
+# URL Shortening App
 
 This is an URL-Shortening APP which takes the entire URL as the input and converts that input into a 6 digit short unique uid and returns back to the user with a short link. The user clicks on this new link, which in turn redirects the user to the original url passed as an input by the user.
 
