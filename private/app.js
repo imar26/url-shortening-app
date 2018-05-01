@@ -3,11 +3,19 @@ module.exports = function(app, client) {
     var ShortUniqueId = require('short-unique-id');
     //Install elastic search
     var elasticsearch = require('elasticsearch');
+    var bonsai_url = process.env.BONSAI_URL || "";
 
-    var elasticClient = new elasticsearch.Client({  
-        host: 'localhost:9200',
-        log: 'info'
-    });
+    if(bonsai_url) {
+        var elasticClient = new elasticsearch.Client({  
+            host: bonsai_url,
+            log: 'info'
+        });
+    } else {
+        var elasticClient = new elasticsearch.Client({  
+            host: 'localhost:9200',
+            log: 'info'
+        });
+    }
 
     var indexName = "urlindex";
 
