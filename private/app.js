@@ -13,7 +13,8 @@ module.exports = function(app, client) {
 
     // Rest Api's
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, 'src/index.html'));
+        // res.sendFile(path.join(__dirname, 'src/index.html'));
+        res.sendFile(path.join(__dirname+'/dist/index.html'));
     });
     
     //Api called to generate short url of a long url and store it in the database

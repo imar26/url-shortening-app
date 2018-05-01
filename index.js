@@ -15,7 +15,7 @@ if(process.env.REDIS_HOSTNAME) {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, '/dist')));
 //CORS
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
