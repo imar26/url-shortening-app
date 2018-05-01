@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var redis = require("redis");
 var client = redis.createClient();
+var PORT = process.env.PORT || 3000;
 //Body Parser
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -19,6 +20,6 @@ app.use(function (req, res, next) {
 
 require('./private/app')(app, client);
 
-var server = app.listen(3000, function () {
+var server = app.listen(PORT, function () {
     console.log('Application server running on port 3000');
 });
