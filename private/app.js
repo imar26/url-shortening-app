@@ -51,16 +51,18 @@ module.exports = function(app, client) {
                                             if(err) {
                                                 res.status(404).json(err);
                                             } else {
-                                                res.status(200).json(uid);
+                                                console.log(req.headers);
+                                                console.log(req.headers.host);
+                                                // res.status(200).json(uid);
                                             }
                                         });
 
-                                        let data = {
-                                            id: uid,
-                                            longUrl: long
-                                        };              
+                                        // let data = {
+                                        //     id: uid,
+                                        //     longUrl: long
+                                        // };              
                                         
-                                        createIndex(req, res, uid, data);
+                                        // createIndex(req, res, uid, data);
                                     }
                                 }
                             }
@@ -71,7 +73,7 @@ module.exports = function(app, client) {
                     client.set(uid, long, function(err, output) {
                         if(err) {
                             res.status(404).json(err);
-                        } else {
+                        } else {                            
                             res.status(200).json(uid);
                         }
                     });
