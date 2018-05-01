@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var redis = require("redis");
+var port = process.env.PORT || 3000;
 
 if(process.env.REDIS_HOSTNAME) {
     var client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOSTNAME, {no_ready_check: true});
@@ -26,6 +27,6 @@ app.use(function (req, res, next) {
 
 require('./private/app')(app, client);
 
-var server = app.listen(3000, function () {
+var server = app.listen(port, function () {
     console.log('Application server running on port 3000');
 });
