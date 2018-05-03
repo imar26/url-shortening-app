@@ -64,4 +64,4 @@ npm start
 
 Application deployed on: https://my-url-shorten.herokuapp.com/
 
-Kibana Server: https://fig-5382430-us-east-1.k4s.bonsaiapps.net/app/kibana#/dev_tools/console?_g=()
+Kibana Server: https://o215auoh2n:eh8qhstota@fig-5382430-us-east-1.k4s.bonsaiapps.net
